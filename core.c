@@ -59,22 +59,19 @@ void removeNo(Arvore* arvore, No* no) {
     free(no);
 }
 
-void percorrer(No* no) {
-    if (no != NULL) {
-        printf("%f", no->valor);
-        percorrer(no->esquerda);
-        percorrer(no->direita);
-    }
-}
+//void percorrer(No* no) {
+//    if (no != NULL) {
+//        printf("%f", no->valor);
+//        percorrer(no->esquerda);
+//        percorrer(no->direita);
+//    }
+//}
+//
+//void percorrerComCallback(No* no, void (callback)(int)) {
+//    if (no != NULL) {
+//        callback(no->valor);
+//        percorrerComCallback(no->esquerda, callback);
+//        percorrerComCallback(no->direita, callback);
+//    }
+//}
 
-void percorrerComCallback(No* no, void (callback)(int)) {
-    if (no != NULL) {
-        callback(no->valor);
-        percorrerComCallback(no->esquerda, callback);
-        percorrerComCallback(no->direita, callback);
-    }
-}
-
-void exibe(int v) {
-    printf("%d\n", v);
-}

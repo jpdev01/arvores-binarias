@@ -21,3 +21,7 @@ void percorrerProfundidadePosOrder(No* no, void (callback)(int)) {
         callback(no->valor);
     }
 }
+
+void exibe(int v) {
+    printf("%d\n", v);
+}
