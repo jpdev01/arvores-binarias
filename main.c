@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "core.c"
+#include "arvoreCore.c"
 #include "percorrer.c"
 #include "percorrerLargura.c"
 #include "fileUtils.c"
