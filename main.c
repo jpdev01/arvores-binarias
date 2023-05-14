@@ -2,6 +2,7 @@
 #include "core.c"
 #include "percorrer.c"
 #include "percorrerLargura.c"
+#include "fileUtils.c"
 
 Arvore* build() {
     Arvore* arvore = cria();
@@ -46,7 +47,10 @@ void q1(Arvore* arvore) {
 
 void q2(Arvore* arvore) {
     printf("Percorrer pela largura: ");
-    percorrerLargura(arvore->raiz, exibe);
+
+    FILE* file = abreArquivo();
+    percorrerLarguraPrintar(arvore->raiz, file, exibe);
+    percorrerLarguraEmArquivo(arvore->raiz, file, escrever);
 }
 
 void main(int argc, char *argv[]){
