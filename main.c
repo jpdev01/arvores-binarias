@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include "core.c"
 #include "percorrer.c"
+#include "percorrerLargura.c"
 
 Arvore* build() {
     Arvore* arvore = cria();
@@ -33,9 +34,7 @@ Arvore* build() {
     return arvore;
 }
 
-void main(int argc, char *argv[]){
-    Arvore *arvore = build();
-
+void q1(Arvore* arvore) {
     printf("In-order: ");
     percorrerProfundidadeInOrder(arvore->raiz,exibe);
     printf("\nPre-order: ");
@@ -43,4 +42,18 @@ void main(int argc, char *argv[]){
     printf("\nPos-order: ");
     percorrerProfundidadePosOrder(arvore->raiz,exibe);
     printf("\n");
+}
+
+void q2(Arvore* arvore) {
+    printf("Percorrer pela largura: ");
+    percorrerLargura(arvore->raiz, exibe);
+}
+
+void main(int argc, char *argv[]){
+    Arvore *arvore = build();
+
+    printf("--- Questão 1 ---- \n");
+    q1(arvore);
+    printf("--- Questão 2 ---- \n");
+    q2(arvore);
 }
