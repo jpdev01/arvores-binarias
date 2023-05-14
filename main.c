@@ -3,7 +3,7 @@
 #include "percorrer.c"
 
 Arvore* build() {
-    Arvore *arvore = cria();
+    Arvore* arvore = cria();
     No* no4 = adicionar(arvore, NULL, 4);
 
     No* no2 = adicionar(arvore, no4, 2);
@@ -29,11 +29,18 @@ Arvore* build() {
 
     No* no7 = adicionar(arvore, no6, 7);
     no6->direita = no7;
+
+    return arvore;
 }
 
 void main(int argc, char *argv[]){
     Arvore *arvore = build();
 
-    printf("In-order: \n");
+    printf("In-order: ");
     percorrerProfundidadeInOrder(arvore->raiz,exibe);
+    printf("\nPre-order: ");
+    percorrerProfundidadePreOrder(arvore->raiz,exibe);
+    printf("\nPos-order: ");
+    percorrerProfundidadePosOrder(arvore->raiz,exibe);
+    printf("\n");
 }

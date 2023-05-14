@@ -11,19 +11,17 @@ typedef struct no {
 
 typedef struct arvore {
     struct no* raiz;
-    int tamanho;
 } Arvore;
 
 Arvore* cria() {
-    Arvore *arvore;
-    arvore = malloc(sizeof(Arvore));
+    Arvore *arvore = malloc(sizeof(Arvore));
     arvore->raiz = NULL;
 
     return arvore;
 }
 
 int vazia(Arvore* arvore) {
-    return (arvore->raiz == NULL);
+    return arvore->raiz == NULL;
 }
 
 No* adicionar(Arvore* arvore, No* pai, int valor) {
@@ -58,20 +56,3 @@ void removeNo(Arvore* arvore, No* no) {
     }
     free(no);
 }
-
-//void percorrer(No* no) {
-//    if (no != NULL) {
-//        printf("%f", no->valor);
-//        percorrer(no->esquerda);
-//        percorrer(no->direita);
-//    }
-//}
-//
-//void percorrerComCallback(No* no, void (callback)(int)) {
-//    if (no != NULL) {
-//        callback(no->valor);
-//        percorrerComCallback(no->esquerda, callback);
-//        percorrerComCallback(no->direita, callback);
-//    }
-//}
-
